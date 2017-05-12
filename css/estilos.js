@@ -5,8 +5,8 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
+    margin:10
   },
   welcome: {
     fontSize: 20,
@@ -18,4 +18,10 @@ export const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+
+  inputText:{
+    fontSize:20,
+    height:50,
+    marginBottom:30
+  }
 });
