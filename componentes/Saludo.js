@@ -4,17 +4,16 @@ import {
 
   Text,
   View,
-  Alert,
-  Button
+  Alert
+  
 } from 'react-native';
 
 //const mensaje = 'Bienvenidos este es un componente saludo';
 
-const onButtonPress = () => {
-  Alert.alert('HA PRESIOANDO EL BOTON!');
-};
+
 
 export class Saludo extends Component{
+
 
     constructor(){
         super();
@@ -28,23 +27,15 @@ export class Saludo extends Component{
         //console.warn("componentDidMount");
     }
 
-	render(){
-        
+
+    render(){
+
         return (
             <View>
-                 <Text style={{flex:1,color:'#0000ff',fontSize:20}}>{this.props.mostrar ? this.props.texto : "llego falso"} </Text>
-                 <Text style={{flex:1,color:'#0000ff',fontSize:20}}>{this.props.mostrar ? this.props.texto : "llego falso"} </Text>
-                 <Text style={{flex:1,color:'#0000ff',fontSize:20}}>{this.props.mostrar ? this.props.texto : "llego falso"} </Text>
+            <Text style={{color:'#0000ff',fontSize:20}}>{this.props.mostrar ? this.props.texto : "llego falso"} </Text>
 
-                <Button
-                  onPress={onButtonPress}
-                  title="Presionar"
-                  accessibilityLabel="See an informative alert"
-                />
+          </View>
 
-               
-            </View>
-
-        );
-	}
+          );
+}
 }
