@@ -10,9 +10,7 @@
   StyleSheet,
   Text,
   View,
-  Image,
-  Modal,
-  TouchableHighlight
+  Button
 } from 'react-native';
 
 import { Saludo } from './componentes/Saludo';
@@ -22,62 +20,25 @@ import { styles } from './css/estilos';
 export default class Clase1 extends Component {
 
 
-  state = {
-    modalVisible: false,
-  }
+ presionBoton = (nombre)=>{
 
-  setModalVisible(visible) {
-    this.setState({modalVisible: visible});
-  }
+  alert('mi nombre es '+ nombre);
 
-  
-  
+}
 
-  render() {
-    return (
-      <View style={styles.container}>
+render() {
+  return (
+    <View style={styles.container}>
 
-      
-      <Modal
-      animationType={"slide"}
-      transparent={false}
-      visible={this.state.modalVisible}
-      onRequestClose={() => {alert("Modal has been closed.")}}
-      >
-      <View style={{marginTop: 22}}>
-      <View>
-      <Text>eres tu!</Text>
-      <Image
+    <Button
+    onPress={this.presionBoton.bind(this,'david')}
+    title="Presione el boton"
+    color="#841584"
+    />
 
-      source={require('./david.png')}
-      />
-
-      <TouchableHighlight onPress={() => {
-        this.setModalVisible(!this.state.modalVisible)
-      }}>
-      <Text>Cerrar esta MIERDA</Text>
-      </TouchableHighlight>
-
-      </View>
-      </View>
-      </Modal>
-
-      <Text>PISE AQUI</Text>
-      <TouchableHighlight onPress={() => {
-        this.setModalVisible(true)
-      }}>
-
-      <Image
-
-      source={require('./caca.png')}
-      />
-      </TouchableHighlight>
-
-      
-
-      </View>
-      );
-  }
+    </View>
+    );
+}
 }
 
 
